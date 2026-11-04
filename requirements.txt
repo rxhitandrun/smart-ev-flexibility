@@ -1,0 +1,8 @@
+# Core dependencies; exact versions should be frozen after a clean installation test.
+pypsa
+linopy
+highspy
+pandas
+numpy
+matplotlib
+xarray
