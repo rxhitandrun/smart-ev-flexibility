@@ -38,7 +38,7 @@ bash reproduce.sh
 
 On macOS, use `python` from the activated virtual environment rather than a separate system Python installation. The scripts write tables and figures to `results/`, which is ignored by Git. Run the reference model before the activation and recovery checks, since those scripts read the reference CSV output.
 
-The Python dependencies are listed without exact version pins. The original local environment was not exported as a lockfile, so exact cross-machine reproducibility has not yet been established. The repository has been tested locally; dependency versions are not pinned, so exact cross-machine reproducibility is not guaranteed.
+The repository has been tested locally using the listed Python dependencies. Exact cross-machine reproducibility is not guaranteed because dependency versions are not pinned.
 
 ## Results from the original local runs
 
