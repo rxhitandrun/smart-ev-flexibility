@@ -10,7 +10,7 @@ import math
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import ev_operating_reserves_corrected as model
+import ev_operating_reserves as model
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "results"
@@ -172,7 +172,7 @@ def simulate_all():
 
         results = pd.DataFrame(scenario_rows)
         audits = pd.DataFrame(audit_rows)
-        results.to_csv(OUT / "lesson17_reserve_validation_summary.csv", index=False)
+        results.to_csv(OUT / "reserve_validation_summary.csv", index=False)
         audits.to_csv(OUT / "lesson17_independent_constraint_audit.csv", index=False)
 
         print("\nRESERVE DURATION AND REQUIREMENT VALIDATION\n")

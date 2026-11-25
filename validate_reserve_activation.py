@@ -23,7 +23,7 @@ TOLERANCE = 1e-4
 def main():
     if not INPUT_FILE.exists():
         raise FileNotFoundError(
-            f"Missing {INPUT_FILE}. First run: python ev_operating_reserves_corrected.py"
+            f"Missing {INPUT_FILE}. First run: python ev_operating_reserves.py"
         )
 
     data = pd.read_csv(INPUT_FILE, index_col=0, parse_dates=True)

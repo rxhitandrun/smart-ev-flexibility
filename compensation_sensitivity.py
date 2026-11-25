@@ -6,7 +6,7 @@ Each scenario uses the same physical system and a matched no-EV baseline.
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
-import ev_operating_reserves_corrected as model
+import ev_operating_reserves as model
 
 # Assumed fleet/aggregator availability compensation in EUR per MW per hour.
 RATES_EUR_PER_MW_HOUR = [1.0, 3.0, 5.0, 10.0]
@@ -51,7 +51,7 @@ for rate in RATES_EUR_PER_MW_HOUR:
     hourly.to_csv(RESULTS_DIR / f"lesson14_hourly_rate_{rate_tag}.csv")
 
 results = pd.DataFrame(records)
-results.to_csv(RESULTS_DIR / "lesson14_compensation_sensitivity.csv", index=False)
+results.to_csv(RESULTS_DIR / "compensation_sensitivity.csv", index=False)
 
 print("\nDRIVER/AGGREGATOR COMPENSATION SENSITIVITY\n")
 print(f"No-EV-reserve baseline total cost: EUR {baseline_cost:,.2f}\n")

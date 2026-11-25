@@ -8,7 +8,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import ev_operating_reserves_corrected as model
+import ev_operating_reserves as model
 
 # Only wind nameplate capacity changes across experiments.
 WIND_CAPACITIES_MW = [80, 120, 160, 200, 240]
@@ -99,7 +99,7 @@ finally:
     model.EV_RESERVE_PRICE = original_ev_price
 
 results = pd.DataFrame(records)
-results.to_csv(OUT / "lesson15_wind_sensitivity_detailed.csv", index=False)
+results.to_csv(OUT / "wind_sensitivity_detailed.csv", index=False)
 
 # Build compact 5-row comparison across wind capacities.
 base = results[results["Scenario"] == "No EV reserve"].set_index("Wind_Capacity_MW")
@@ -115,7 +115,7 @@ comparison = pd.DataFrame({
     "With_EV_Cost_EUR": [ev.loc[w, "Total_System_Cost_EUR"] for w in WIND_CAPACITIES_MW],
     "Savings_EUR": [ev.loc[w, "Savings_vs_No_EV_EUR"] for w in WIND_CAPACITIES_MW],
 })
-comparison.to_csv(OUT / "lesson15_wind_sensitivity_comparison.csv", index=False)
+comparison.to_csv(OUT / "wind_sensitivity_comparison.csv", index=False)
 
 print("\nWIND CAPACITY SENSITIVITY\n")
 print(comparison.round(2).to_string(index=False))

@@ -14,12 +14,12 @@ RESULTS = Path('results')
 INPUT = RESULTS / 'lesson12_v2_with_ev_reserve.csv'
 if not INPUT.exists():
     raise FileNotFoundError(
-        f'Missing {INPUT}. Run python ev_operating_reserves_corrected.py first.'
+        f'Missing {INPUT}. Run python ev_operating_reserves.py first.'
     )
 base = pd.read_csv(INPUT, index_col=0, parse_dates=True)
 base.index.name = 'snapshot'
 
-from ev_operating_reserves_corrected import (
+from ev_operating_reserves import (
     hours, normal_demand, wind_cf, WIND_MW, HYDRO_MW, BACKUP_MW,
     HYDRO_BUDGET_MWH, HYDRO_RAMP_PU_PER_HOUR, HYDRO_COST, BACKUP_COST,
     EV_POWER_MW, EV_CAPACITY_MWH, EV_MIN_MWH, EV_DEPARTURE_MWH,

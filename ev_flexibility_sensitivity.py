@@ -11,7 +11,7 @@ import math
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import ev_operating_reserves_corrected as model
+import ev_operating_reserves as model
 
 BASE_FLEET_VEHICLES = 2000
 FLEET_SIZES = [500, 1000, 2000, 3000, 4000]
